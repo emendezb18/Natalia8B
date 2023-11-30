@@ -1,0 +1,94 @@
+/*Linea de tiempo*/
+
+.linea-tiempo {
+    position: relative;
+    width: 600px;
+    max-width: 95vw;
+    height: 100%;
+    font-family: Arial;
+    margin-left: 200px;
+  }
+  .imagen{
+    margin-left: 50px;
+    width: 200px;
+    height: 200px;
+    position: relative;
+  }
+  /* Pseudocodigo para hacer y posicionar la linea*/
+.linea-tiempo::before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: #000;
+    left: 50%;
+    height: 100%;
+    border-radius: 10px;
+  }
+  /*Crear las cajas */
+  .momento {
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+  }
+  /* Los recuadros pares*/
+  .momento:nth-child(even) { 
+    left: 55%;
+  }
+  /* Creación de círculos */
+  .momento::after {
+    content: '';
+    position: absolute;
+    top: calc(50% + 10px);
+    right: calc(-11.11% - 11.5px);
+    height: 20px;
+    width: 20px;
+    background-color: #000;
+    border-radius: 50%;
+  }
+  /*Posicionamiento del circulo impares*/
+  .momento:nth-child(even)::after {
+    left: calc(-11.11% - 8.5px);
+  }
+  
+  /*Titulos de fecha*/
+  .momento h3 {
+    margin: 10px 0px;
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  /*Cambios de los textos de los recuadros*/
+  .momento .descripcion {
+    background-color: #eee;
+    border-radius: 10px;
+    padding: 10px;
+    line-height: 22px;
+    font-size: 12px;
+  }
+  
+  /*Bordes de los recuadros*/
+  .momento .descripcion::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: calc(50% + 10px);
+    height: 0;
+    width: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 12px solid #eee;
+  }
+  
+  /*recuadro de pares*/
+  .momento:nth-child(even) .descripcion {
+    background-color: #3393FE;
+    color: white;
+  }
+  /*Bordes recuadro de pares*/
+  .momento:nth-child(even) .descripcion::after{
+    left: -10px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 12px solid #3393FE;
+    border-left: none;
+  }

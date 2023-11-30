@@ -1,0 +1,27 @@
+body {
+    background-color:rgb(245, 169, 114);
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 21px;
+    padding: 40px;
+    margin: 40px;
+
+}
+
+img {
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+    width: 20%; 
+    height: 20%; 
+    border-style:outset;
+    border-color:orange;
+    border-radius: 10px;
+    border-width: 6px;
+}
+
+
+.texto{
+    border-style: double;
+    border-color: rgb(0, 0, 0);
+    background-color: rgb(130, 144, 224);
+}
